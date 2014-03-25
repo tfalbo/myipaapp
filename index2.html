@@ -14,11 +14,11 @@
 
 	var i=0;
 	$(document).on('click','#right',function(){ 
+		i++;
 		if(i==mycars.length){
 			i=0;
 		}	
   		$("a#texto").text(mycars[i]);
-  		i++;
 	});
 
 	$(document).on('click','#left',function(){ 
