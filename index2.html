@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Default theme - jQuery Mobile Demos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+	<script>
+
+	var mycars=new Array("Saab","Volvo","BMW");
+
+	var i=0;
+	$(document).on('click','#right',function(){ 
+		if(i==mycars.length){
+			i=0;
+		}	
+  		$("a#texto").text(mycars[i]);
+  		i++;
+	});
+
+	$(document).on('click','#left',function(){ 
+		i--;
+		if(i<0){
+			i=mycars.length-1;
+		}	
+  		$("a#texto").text(mycars[i]);	
+	});
+
+	</script>
+
+
+</head>
+
+<body>
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+
+  	<div data-role="navbar">
+    <ul>
+        <li><a id="left"  href="#">Left</a></li>
+        <li><a id="texto" href="#">Type</a></li>
+        <li><a id="right" href="#">Right</a></li>
+    </ul>
+	</div><!-- /navbar -->
+
+  </div>
+
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+
+</div>
+</body>
+
+</html>

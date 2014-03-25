@@ -8,6 +8,32 @@
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+	<script>
+
+	/*var arr = [
+  			{val : 1, text: 'One'},
+  			{val : 2, text: 'Two'},
+  			{val : 3, text: 'Three'}
+			];
+
+	var sel = $('<select>').appendTo('body');
+			$(arr).each(function() {
+ 			self.append($("<option>").attr('value',this.val).text(this.text));
+	});*/
+
+	$(document).on('change','#type',function(){ 
+    	if ($(this).val() === "vow") {
+    		alert("Changed!"); 
+		});
+
+	/*$('#type').change(function() {
+    	if ($(this).val() === "con") {
+        alert("Your book is overdue.");
+    	}
+	});*/
+
+	</script>
 	
 
 </head>
