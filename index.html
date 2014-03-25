@@ -14,7 +14,7 @@
 
 <body>
 
-<div data-role="page">
+<div data-role="page" data-theme="b"> 
 
   <div data-role="header">
     <h1>My IPA App</h1>
@@ -25,34 +25,57 @@
   	 <form method="post" action="demoform.asp">
       <div class="ui-field-contain">
         <fieldset data-role="controlgroup">
-          <legend>Schedule a Meeting:</legend>
-            <label for="day">Select Day</label>
-            <select name="day" id="day">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
+            <label for="type">Consonant or Vowel</label>
+            <select name="type" id="type">
+              <option value="con">Consonant</option>
+              <option value="vow">Vowel</option>
             </select>
 
-            <label for="time">Select Time</label>
-            <select name="time" id="time">
-              <option value="08">08:00</option>
-              <option value="09">09:00</option>
-              <option value="10">10:00</option>
-              <option value="11">11:00</option>
-              <option value="12">12:00</option>
-              <option value="13">13:00</option>
-              <option value="14">14:00</option>
-              <option value="15">15:00</option>
-              <option value="16">16:00</option>
+            <label for="point">Point of Production</label>
+            <select name="point" id="point">
+              <optgroup label="Front">
+              	<option value="bilabial">Bilabial</option>
+              	<option value="labiodental">Labiodental</option>
+              	<option value="dental">Dental</option>
+              <optgroup label="Middle">
+              	<option value="alveolar">Alveolar</option>
+              	<option value="postalveolar">Postalveolar</option>
+              	<option value="retroflex">Retroflex</option>
+              	<option value="palatal">Palatal</option>
+              <optgroup label="Back">
+              	<option value="velar">Velar</option>
+              	<option value="uvular">Uvular</option>
+              	<option value="pharyngeal">Pharyngeal</option>
+              	<option value="glottal">Glottal</option>
             </select>
+
+
+            <label for="manner">Manner of Production</label>
+            <select name="manner" id="manner">
+              <option value="plosive">Plosive</option>
+              <option value="nasal">Nasal</option>
+              <option value="trill">Trill</option>
+              <option value="tapflap">Tap or Flap</option>
+              <option value="fricative">Fricative</option>
+              <option value="lateralfricative">Lateral Fricative</option>
+              <option value="approximant">Approximant</option>
+              <option value="lateralapproximant">Lateral Approximant</option>
+            </select>
+
+            <label for="voicing">Voicing</label>
+            <select name="voicing" id="voicing">
+              <option value="voiced">Voiced</option>
+              <option value="unvoiced">Unvoiced</option>
+            </select>
+
+
+
         </fieldset>
       </div>
       <input type="submit" data-inline="true" value="Submit">
     </form>
+
+
 
 
   </div>
