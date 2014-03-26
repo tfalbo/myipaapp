@@ -23,10 +23,10 @@
 
   <div data-role="main" class="ui-content">
     
-  	 <form method="post" action="demoform.asp">
+  	 <form id="form">
       <div class="ui-field-contain">
-        <fieldset data-role="controlgroup">
           
+          <fieldset data-role="controlgroup">
 
 
             <label for="type">Consonant or Vowel</label>
@@ -41,7 +41,8 @@
             <label for="point">Point of Production</label>
 
             <select name="point" id="point">
-
+                <option class="">Point of Production</option>
+                <option class="con vow">Point of Production</option>
               	<option value="bilabial" class="con">Bilabial</option>
               	<option value="labiodental" class="con">Labiodental</option>
               	<option value="dental" class="con">Dental</option>
@@ -63,6 +64,8 @@
 
             <label for="manner">Manner of Production</label>
             <select name="manner" id="manner">
+              <option class="">Manner of Production</option>
+                <option class="con vow">Manner of Production</option>
               <option value="plosive" class="con">Plosive</option>
               <option value="nasal" class="con">Nasal</option>
               <option value="trill" class="con">Trill</option>
@@ -81,6 +84,8 @@
 
             <label for="voicing">Voicing</label>
             <select name="voicing" id="voicing">
+              <option class="">Voicing</option>
+              <option class="con vow">Voicing</option>
               <option value="voiced" class="con">Voiced</option>
               <option value="unvoiced" class="con">Unvoiced</option>
               <option value="notapplicable" class="vow">Not Applicable</option>
@@ -88,14 +93,17 @@
 
 
 
+            </fieldset>
 
 
-
-        </fieldset>
       </div>
       <input type="submit" data-inline="true" value="Submit">
     </form>
 
+    <div id="phoneme" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em;">
+    <h1>/p/</h1>
+
+    </div>
 
 
 
@@ -108,10 +116,20 @@
 </div>
 
 <script>
-    $("#point").chained("#type");
-    $("#manner").chained("#type");
-    $("#voicing").chained("#type");
-  </script>
+    $( document ).on( "pagecreate", function() {
+      $("#phoneme").hide();
+      $("#point").chained("#type");
+      $("#manner").chained("#type");
+      $("#voicing").chained("#type");
+    });
+
+
+    $( "#form" ).submit(function( event ) {
+      $("#phoneme").show();
+      
+    });
+
+</script>
 
 
 </body>
