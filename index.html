@@ -6,35 +6,10 @@
 	<title>Default theme - jQuery Mobile Demos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
-	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="js/jquery.chained.min.js"></script>
 
-	<script>
-
-	/*var arr = [
-  			{val : 1, text: 'One'},
-  			{val : 2, text: 'Two'},
-  			{val : 3, text: 'Three'}
-			];
-
-	var sel = $('<select>').appendTo('body');
-			$(arr).each(function() {
- 			self.append($("<option>").attr('value',this.val).text(this.text));
-	});*/
-
-	$(document).on('change','#type',function(){ 
-    	if ($(this).val() === "vow") {
-    		alert("Changed!"); 
-		});
-
-	/*$('#type').change(function() {
-    	if ($(this).val() === "con") {
-        alert("Your book is overdue.");
-    	}
-	});*/
-
-	</script>
-	
 
 </head>
 
@@ -51,48 +26,68 @@
   	 <form method="post" action="demoform.asp">
       <div class="ui-field-contain">
         <fieldset data-role="controlgroup">
+          
+
+
             <label for="type">Consonant or Vowel</label>
+
             <select name="type" id="type">
+              <option value="">Consonant or Vowel</option>
               <option value="con">Consonant</option>
               <option value="vow">Vowel</option>
             </select>
 
+
             <label for="point">Point of Production</label>
+
             <select name="point" id="point">
-              <optgroup label="Front">
-              	<option value="bilabial">Bilabial</option>
-              	<option value="labiodental">Labiodental</option>
-              	<option value="dental">Dental</option>
-              <optgroup label="Middle">
-              	<option value="alveolar">Alveolar</option>
-              	<option value="postalveolar">Postalveolar</option>
-              	<option value="retroflex">Retroflex</option>
-              	<option value="palatal">Palatal</option>
-              <optgroup label="Back">
-              	<option value="velar">Velar</option>
-              	<option value="uvular">Uvular</option>
-              	<option value="pharyngeal">Pharyngeal</option>
-              	<option value="glottal">Glottal</option>
+
+              	<option value="bilabial" class="con">Bilabial</option>
+              	<option value="labiodental" class="con">Labiodental</option>
+              	<option value="dental" class="con">Dental</option>
+                <option value="front" class="vow">Front</option>
+
+              	<option value="alveolar" class="con">Alveolar</option>
+              	<option value="postalveolar" class="con">Postalveolar</option>
+              	<option value="retroflex" class="con">Retroflex</option>
+              	<option value="palatal" class="con">Palatal</option>
+                <option value="central" class="vow">Central</option>
+
+              	<option value="velar" class="con">Velar</option>
+              	<option value="uvular" class="con">Uvular</option>
+              	<option value="pharyngeal" class="con">Pharyngeal</option>
+              	<option value="glottal" class="con">Glottal</option>
+                <option value="back" class="vow">Back</option>
             </select>
 
 
             <label for="manner">Manner of Production</label>
             <select name="manner" id="manner">
-              <option value="plosive">Plosive</option>
-              <option value="nasal">Nasal</option>
-              <option value="trill">Trill</option>
-              <option value="tapflap">Tap or Flap</option>
-              <option value="fricative">Fricative</option>
-              <option value="lateralfricative">Lateral Fricative</option>
-              <option value="approximant">Approximant</option>
-              <option value="lateralapproximant">Lateral Approximant</option>
+              <option value="plosive" class="con">Plosive</option>
+              <option value="nasal" class="con">Nasal</option>
+              <option value="trill" class="con">Trill</option>
+              <option value="tapflap" class="con">Tap or Flap</option>
+              <option value="fricative" class="con">Fricative</option>
+              <option value="lateralfricative" class="con">Lateral Fricative</option>
+              <option value="approximant" class="con">Approximant</option>
+              <option value="lateralapproximant" class="con">Lateral Approximant</option>
+
+              <option value="close" class="vow">Close</option>
+              <option value="close-mid" class="vow">Close-mid</option>
+              <option value="open-mid" class="vow">Open-mid</option>
+              <option value="open" class="vow">Open</option>
+
             </select>
 
             <label for="voicing">Voicing</label>
             <select name="voicing" id="voicing">
-              <option value="voiced">Voiced</option>
-              <option value="unvoiced">Unvoiced</option>
+              <option value="voiced" class="con">Voiced</option>
+              <option value="unvoiced" class="con">Unvoiced</option>
+              <option value="notapplicable" class="vow">Not Applicable</option>
             </select>
+
+
+
 
 
 
@@ -111,6 +106,13 @@
   </div>
 
 </div>
+
+<script>
+    $("#point").chained("#type");
+    $("#manner").chained("#type");
+    $("#voicing").chained("#type");
+  </script>
+
 
 </body>
 
