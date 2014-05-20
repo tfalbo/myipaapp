@@ -1,0 +1,27 @@
+{
+    "consonants":[
+        {
+            "consonantName":"p",
+            "point":"bilabial",
+            "manner":"plosive",
+            "voicing":"no"
+        },
+        {
+            "consonantName":"r caipira",
+            "point":"alveolar",
+            "manner":"approximant",
+            "voicing":"yes",
+        }
+
+    ],
+
+    "vowels":[
+        {
+            "vowelName":"a",
+            "point":"close",
+            "manner":"round"
+        }
+
+
+    ]
+}
